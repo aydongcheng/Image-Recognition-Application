@@ -4,7 +4,7 @@ model.eval()
 
 from PIL import Image
 from torchvision import transforms
-filename = ''
+filename = 'dog.jpg'
 input_image = Image.open(filename)
 preprocess = transforms.Compose([
     transforms.Resize(256),
