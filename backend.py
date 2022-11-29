@@ -44,11 +44,12 @@ def deal_data(conn, addr):
                 fp.write(data)
             fp.close()
             print('end receive...')
-            result = SqueezeNet.recoginition_image(new_filename)
+            result = SqueezeNet.recognition_image(new_filename)
             conn.send(result.encode())
         conn.close()
         break
 
 
 if __name__ == '__main__':
+    os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
     socket_service()
