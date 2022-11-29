@@ -29,16 +29,3 @@ function sendImg(){
      xhr.open("POST", "http://192.168.0.254:8000/img");
      xhr.send(formData);
 }
-
-
-// function sendImg() {
-//      const obj = {inFile: img};
-//      const url = "http://127.0.0.1:8000/img";
-//      $.post(url, obj, function(data, status) {
-//           console.log(`${data} and status is ${status}`);
-//      })
-//      ;
-// }
-
-
-
