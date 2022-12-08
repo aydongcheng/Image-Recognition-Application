@@ -1,12 +1,16 @@
 from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
 import os
 import aiofiles
 import SqueezeNet
 
 app = FastAPI()
 
+app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_credentials=True, allow_methods=['*'], allow_headers=['*'])
 
-@app.get('/')
+
+@app.get('/', response_class=HTMLResponse)
 async def root():
     return "<html> <body> <h1> It works! </h1> </body> </html>"
 

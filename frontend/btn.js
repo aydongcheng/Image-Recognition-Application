@@ -26,6 +26,6 @@ function sendImg(){
                resdiv.innerHTML = res
           }
      }
-     xhr.open("POST", "http://192.168.0.254:8000/img");
+     xhr.open("POST", "http://128.95.190.58:25000/img");
      xhr.send(formData);
 }
