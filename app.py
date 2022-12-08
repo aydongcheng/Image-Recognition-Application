@@ -7,8 +7,6 @@ import SqueezeNet
 
 app = FastAPI()
 
-app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_credentials=True, allow_methods=['*'], allow_headers=['*'])
-
 
 @app.get('/', response_class=HTMLResponse)
 async def root():
@@ -30,4 +28,5 @@ async def uploadFile(inFile: UploadFile = File(...)):
 
 if __name__ == "__main__":
     import uvicorn
+    app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_credentials=True, allow_methods=['*'], allow_headers=['*'])
     uvicorn.run(app, host="0.0.0.0", port=25000)
