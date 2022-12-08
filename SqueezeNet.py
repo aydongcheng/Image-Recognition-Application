@@ -1,11 +1,10 @@
 import torch
 from PIL import Image
 from torchvision import transforms
-from torchvision.models import SqueezeNet1_0_Weights
 
 
 def recognition_image(filename):
-    model = torch.hub.load('pytorch/vision:v0.10.0', 'squeezenet1_0', weights=SqueezeNet1_0_Weights.DEFAULT)
+    model = torch.hub.load('pytorch/vision:v0.10.0', 'squeezenet1_0', pretrained=True)
     model.eval()
     input_image = Image.open(filename)
     preprocess = transforms.Compose([
