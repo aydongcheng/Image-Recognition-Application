@@ -26,6 +26,7 @@ function sendImg(){
                resdiv.innerHTML = res
           }
      }
+     //please modify to the ip to your backend
      xhr.open("POST", "http://10.10.1.2:25000/img");
      xhr.send(formData);
 }
